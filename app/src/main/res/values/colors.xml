@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_white_90">#e5ffffff</color>
+    <color name="bg_white_80">#ccffffff</color>
+    <color name="bg_white_70">#b2ffffff</color>
+    <color name="bg_white_60">#80ffffff</color>
+    <color name="bg_white_40">#66ffffff</color>
+    <color name="bg_white_30">#4cffffff</color>
+    <color name="bg_white_15">#26ffffff</color>
+    <color name="bg_white_10">#1Affffff</color>
+    <color name="bg_black_10">#1A000000</color>
+    <color name="bg_black_20">#33000000</color>
+    <color name="bg_black_30">#4C000000</color>
+    <color name="bg_black_40">#66000000</color>
+    <color name="bg_black_60">#99000000</color>
+    <color name="bg_black_70">#b2000000</color>
+    <color name="bg_black_80">#CF000000</color>
+
+    <!-- 多彩颜色序列 -->
+    <color name="color_item_1">#63E4B5</color>
+    <color name="color_item_2">#5CD830</color>
+    <color name="color_item_3">#4885F4</color>
+    <color name="color_item_4">#F3561F</color>
+    <color name="color_item_5">#00FF7E</color>
+    <color name="color_item_6">#FCE023</color>
+    <color name="color_item_7">#3D9ED6</color>
+    <color name="color_item_8">#2558CD</color>
+    <color name="color_item_9">#D44CD9</color>
+    <color name="color_item_10">#A3E721</color>
+    <color name="color_item_11">#E24141</color>
+    <color name="color_item_12">#A4BDFC</color>
+    <color name="color_item_13">#26F792</color>
+    <color name="color_item_14">#B53DFA</color>
+    <color name="color_item_15">#FD8238</color>
+</resources>
