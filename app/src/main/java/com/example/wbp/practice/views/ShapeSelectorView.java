@@ -1,4 +1,4 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,6 +12,8 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.example.wbp.practice.R;
 
 /**
  * Created by new on 15/8/9.

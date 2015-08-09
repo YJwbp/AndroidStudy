@@ -1,9 +1,12 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.adapter;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import com.example.wbp.practice.views.LauncherAdapterItem_;
+import com.example.wbp.practice.views.LauncherAdapterItem;
 
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;

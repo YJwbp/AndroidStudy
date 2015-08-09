@@ -1,8 +1,10 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.views;
 
 import android.content.Context;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.wbp.practice.R;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;

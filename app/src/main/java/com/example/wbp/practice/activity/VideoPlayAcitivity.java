@@ -1,10 +1,12 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.activity;
 
 import android.app.Activity;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import com.example.wbp.practice.R;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;

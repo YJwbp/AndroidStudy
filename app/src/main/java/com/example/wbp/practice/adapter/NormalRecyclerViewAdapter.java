@@ -1,4 +1,4 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.wbp.practice.R;
+
 import org.androidannotations.annotations.EBean;
-import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by new on 15/8/4.

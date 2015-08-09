@@ -1,24 +1,17 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.MediaPlayer;
-import android.media.session.MediaController;
-import android.os.Bundle;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.VideoView;
+
+import com.example.wbp.practice.adapter.LauncherAdapter;
+import com.example.wbp.practice.R;
+import com.example.wbp.practice.activity.ShapeSelectorActivity_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -33,10 +26,10 @@ public class MainActivity extends Activity {
 	LauncherAdapter adapter;
 
 	List<String> applications;
-	private final String PKG_NAME = "com.example.wbp.practice.";
+	private final String PKG_NAME = "com.example.wbp.practice.activity.";
 
 	// 以后添加新的Acitivity只需要在这里加入完整的类名即可
-	String [] activities = {"com.example.wbp.practice.VideoPlayAcitivity_", "com.example.wbp.practice.ShapeSelectorActivity_"};
+	String [] activities = {"com.example.wbp.practice.activity.VideoPlayAcitivity_", "com.example.wbp.practice.activity.ShapeSelectorActivity_"};
 
 	@AfterViews
 	void afterViews() {
