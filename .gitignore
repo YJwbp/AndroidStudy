@@ -1,4 +1,10 @@
 .gradle
+/BpweiStudy.iml
+/build.gradle
+/gradle.properties
+/gradlew
+/gradlew.bat
+/settings.gradle
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
