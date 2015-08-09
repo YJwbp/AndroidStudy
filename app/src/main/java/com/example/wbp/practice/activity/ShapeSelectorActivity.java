@@ -1,9 +1,10 @@
-package com.example.wbp.practice;
+package com.example.wbp.practice.activity;
 
 import android.app.Activity;
-import android.view.View;
 
-import org.androidannotations.annotations.AfterViews;
+import com.example.wbp.practice.R;
+import com.example.wbp.practice.views.ShapeSelectorView;
+
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
