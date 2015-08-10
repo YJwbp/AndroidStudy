@@ -1,3 +1,9 @@
+.idea/.name
+.idea/misc.xml
+.idea/modules.xml
+app/app.iml
+.gitignore.swp
+AndroidStudy.iml
 .gradle
 /BpweiStudy.iml
 /build.gradle

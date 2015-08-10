@@ -24,6 +24,10 @@
             android:name=".activity.ShapeSelectorActivity_"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.CustomProgressBarActivity_"
+            android:label="@string/app_name" >
+        </activity>
 
     </application>
 

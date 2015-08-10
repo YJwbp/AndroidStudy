@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:progress="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/progress_bar_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/progress_bar_margin_left"
+        android:layout_marginRight="@dimen/progress_bar_margin_right"
+        />
+    <com.example.wbp.practice.views.HorizontalProgressBarWithNumber
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="30"
+        android:layout_marginLeft="@dimen/progress_bar_margin_left"
+        android:layout_marginRight="@dimen/progress_bar_margin_right"
+        android:layout_marginTop="@dimen/progress_bar_margin_top"
+        progress:progress_unreached_color="@color/bg_black_10"
+        progress:progress_reached_color="@color/color_item_2"
+        progress:progress_text_color="@color/color_item_4"
+        progress:progress_reached_bar_height="@dimen/progress_reached_bar_height"
+        progress:progress_unreached_bar_height="@dimen/progress_unreached_bar_height"
+        progress:progress_text_size="@dimen/progress_text_size"
+        />
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/progress_bar_margin_top"
+        android:layout_below="@+id/progress_bar"
+        android:text="@string/txt_start"/>
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/progress_bar_margin_top"
+        android:layout_below="@+id/progress_bar"
+        android:layout_toRightOf="@+id/btn_start"
+        android:text="@string/txt_pause"/>
+
+
+
+</RelativeLayout>

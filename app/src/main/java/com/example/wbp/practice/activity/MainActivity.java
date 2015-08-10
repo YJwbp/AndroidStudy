@@ -29,7 +29,8 @@ public class MainActivity extends Activity {
 	private final String PKG_NAME = "com.example.wbp.practice.activity.";
 
 	// 以后添加新的Acitivity只需要在这里加入完整的类名即可
-	String [] activities = {"com.example.wbp.practice.activity.VideoPlayAcitivity_", "com.example.wbp.practice.activity.ShapeSelectorActivity_"};
+	String [] activities = {"com.example.wbp.practice.activity.VideoPlayAcitivity_", "com.example.wbp.practice.activity.ShapeSelectorActivity_",
+	"com.example.wbp.practice.activity.CustomProgressBarActivity_"};
 
 	@AfterViews
 	void afterViews() {

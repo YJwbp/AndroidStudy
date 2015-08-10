@@ -8,4 +8,10 @@
     <dimen name="item_height">51dp</dimen>
     <dimen name="item_font_size">25sp</dimen>
     <dimen name="title_font_size">40sp</dimen>
+    <dimen name="progress_bar_margin_top">50dp</dimen>
+    <dimen name="progress_bar_margin_left">10dp</dimen>
+    <dimen name="progress_bar_margin_right">10dp</dimen>
+    <dimen name="progress_reached_bar_height">8dp</dimen>
+    <dimen name="progress_unreached_bar_height">5dp</dimen>
+    <dimen name="progress_text_size">15sp</dimen>
 </resources>
