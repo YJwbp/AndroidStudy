@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Button;
 
 import com.example.wbp.practice.R;
+import com.example.wbp.practice.views.FanProgressBar;
 import com.example.wbp.practice.views.HorizontalProgressBarWithNumber;
 import com.example.wbp.practice.views.RoundProgressBarWithNumber;
 
@@ -27,6 +28,8 @@ public class CustomProgressBarActivity extends Activity {
 	HorizontalProgressBarWithNumber mProgressBar;
 	@ViewById(R.id.progress_bar_round)
 	RoundProgressBarWithNumber mProgressBarRound;
+	@ViewById(R.id.progress_bar_fan)
+	FanProgressBar fanProgressBar;
 	@ViewById(R.id.btn_start)
 	Button btnStart;
 	@ViewById(R.id.btn_pause)
@@ -42,6 +45,7 @@ public class CustomProgressBarActivity extends Activity {
 		mProgressBar.setProgress(0);
 		progressBar.setProgress(0);
 		mProgressBarRound.setProgress(0);
+		fanProgressBar.setProgress(0);
 		mHandler.sendEmptyMessage(MSG_PROGRESS_UPDATE);
 		Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
 //		horizontalProgressBarWithNumber.setProgress(0);
@@ -91,6 +95,7 @@ private Handler mHandler = new Handler() {
 		mProgressBar.setProgress(++progress);
 		progressBar.setProgress(++progress);
 		mProgressBarRound.setProgress(++progress);
+		fanProgressBar.setProgress(++progress);
 		if (progress >= 100) {
 			mHandler.removeMessages(MSG_PROGRESS_UPDATE);
 

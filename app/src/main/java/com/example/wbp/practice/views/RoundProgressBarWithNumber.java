@@ -14,11 +14,11 @@ import com.example.wbp.practice.R;
  */
 public class RoundProgressBarWithNumber extends HorizontalProgressBarWithNumber {
 
-	private static final int DEFAULT_RADIUS = 30;
-	private int mRadius = 0;
-	private int paintWidth = 0;
-	private int totalWidth = 0;
-	private int totalHeight = 0;
+	protected static final int DEFAULT_RADIUS = 30;
+	protected int mRadius = 0;
+	protected int paintWidth = 0;
+	protected int totalWidth = 0;
+	protected int totalHeight = 0;
 
 	public RoundProgressBarWithNumber(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
