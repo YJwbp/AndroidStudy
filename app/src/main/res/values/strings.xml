@@ -7,4 +7,7 @@
 <!--进度条相关-->
     <string name="txt_start">开始</string>
     <string name="txt_pause">暂停</string>
+    <string name="normal">普通</string>
+    <string name="horizontal">水平带数字</string>
+    <string name="round">环形带数字</string>
 </resources>

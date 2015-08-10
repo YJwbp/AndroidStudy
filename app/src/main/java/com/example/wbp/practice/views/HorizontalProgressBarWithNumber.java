@@ -55,7 +55,7 @@ public class HorizontalProgressBarWithNumber extends ProgressBar {
 		// 设置画笔
 		mPaint.setTextSize(mTextSize);
 		mPaint.setColor(mTextColor);
-
+		mPaint.setStrokeCap(Paint.Cap.ROUND);
 	}
 
 	private void obtainStyledAttributes(AttributeSet attrs) {

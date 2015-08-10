@@ -14,4 +14,17 @@
     <dimen name="progress_reached_bar_height">8dp</dimen>
     <dimen name="progress_unreached_bar_height">5dp</dimen>
     <dimen name="progress_text_size">15sp</dimen>
+    <dimen name="universal_interval">10dp</dimen>
+
+    <dimen name="progress_reached_bar_height_round">4dp</dimen>
+    <dimen name="progress_unreached_bar_height_round">2dp</dimen>
+    <dimen name="radius">50dp</dimen>
+    <!-- 字体 -->
+    <dimen name="font_1">10sp</dimen>
+    <dimen name="font_2">15sp</dimen>
+    <dimen name="font_3">20sp</dimen>
+    <dimen name="font_4">25sp</dimen>
+    <dimen name="font_5">30sp</dimen>
+    <dimen name="font_6">35sp</dimen>
+
 </resources>

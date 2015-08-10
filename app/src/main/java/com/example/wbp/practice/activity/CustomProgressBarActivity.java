@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.wbp.practice.R;
 import com.example.wbp.practice.views.HorizontalProgressBarWithNumber;
+import com.example.wbp.practice.views.RoundProgressBarWithNumber;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -22,8 +23,10 @@ import android.widget.Toast;
  */
 @EActivity(R.layout.activity_progress_bar_customed)
 public class CustomProgressBarActivity extends Activity {
-	@ViewById(R.id.progress_bar)
+	@ViewById(R.id.progress_bar_horizontal)
 	HorizontalProgressBarWithNumber mProgressBar;
+	@ViewById(R.id.progress_bar_round)
+	RoundProgressBarWithNumber mProgressBarRound;
 	@ViewById(R.id.btn_start)
 	Button btnStart;
 	@ViewById(R.id.btn_pause)
@@ -36,7 +39,11 @@ public class CustomProgressBarActivity extends Activity {
 
 	@Click(R.id.btn_start)
 	void clickStart() {
+		mProgressBar.setProgress(0);
+		progressBar.setProgress(0);
+		mProgressBarRound.setProgress(0);
 		mHandler.sendEmptyMessage(MSG_PROGRESS_UPDATE);
+		Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
 //		horizontalProgressBarWithNumber.setProgress(0);
 //		progressBar.setProgress(0);
 //		Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
@@ -61,6 +68,7 @@ public class CustomProgressBarActivity extends Activity {
 	@Click(R.id.btn_pause)
 	void clickPause() {
 		Toast.makeText(this, "暂停", Toast.LENGTH_SHORT).show();
+		mHandler.removeMessages(MSG_PROGRESS_UPDATE);
 	}
 
 //	Handler handler = new Handler() {
@@ -79,8 +87,10 @@ public class CustomProgressBarActivity extends Activity {
 private Handler mHandler = new Handler() {
 	public void handleMessage(android.os.Message msg) {
 		int progress = mProgressBar.getProgress();
+
 		mProgressBar.setProgress(++progress);
 		progressBar.setProgress(++progress);
+		mProgressBarRound.setProgress(++progress);
 		if (progress >= 100) {
 			mHandler.removeMessages(MSG_PROGRESS_UPDATE);
 
