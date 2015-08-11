@@ -72,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_round"
+        android:progress="@integer/progress"
         android:layout_marginLeft="@dimen/progress_bar_margin_left"
         android:layout_marginRight="@dimen/progress_bar_margin_right"
         android:layout_marginTop="@dimen/universal_interval"

@@ -38,6 +38,8 @@ public class CustomProgressBarActivity extends Activity {
 	ProgressBar progressBar;
 
 	private int count = 0;
+	private int countSimplest = 100;
+
 	private static final int MSG_PROGRESS_UPDATE = 0x110;
 
 	@Click(R.id.btn_start)
@@ -45,29 +47,11 @@ public class CustomProgressBarActivity extends Activity {
 		mProgressBar.setProgress(0);
 		progressBar.setProgress(0);
 		mProgressBarRound.setProgress(0);
-		fanProgressBar.setProgress(0);
+		fanProgressBar.setProgress(100);
+
+		handlerSimplest.postDelayed(runnable, 100);
 		mHandler.sendEmptyMessage(MSG_PROGRESS_UPDATE);
 		Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
-//		horizontalProgressBarWithNumber.setProgress(0);
-//		progressBar.setProgress(0);
-//		Toast.makeText(this, "开始", Toast.LENGTH_SHORT).show();
-//		new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				for (int i = 1; i < 101; i++) {
-//					count++;
-//					try {
-//						Thread.sleep(100);
-//					} catch (Exception e) {
-//						e.printStackTrace();
-//					}
-//					Message msg = new Message();
-//					msg.arg1 = count;
-//					handler.sendMessage(msg);
-//				}
-//				count =0;
-//			}
-//		}).start();
 	}
 	@Click(R.id.btn_pause)
 	void clickPause() {
@@ -75,32 +59,29 @@ public class CustomProgressBarActivity extends Activity {
 		mHandler.removeMessages(MSG_PROGRESS_UPDATE);
 	}
 
-//	Handler handler = new Handler() {
-//		@Override
-//		public void handleMessage(Message msg) {
-//			int progress = msg.arg1;
-//
-//			horizontalProgressBarWithNumber.setProgress(progress);
-//			Log.i("Progress 1: ", horizontalProgressBarWithNumber.getProgress() + "");
-//
-//			progressBar.setProgress(progress);
-//			Log.i("Progress 2: ", progressBar.getProgress() + "");
-//
-//		}
-//	};
-private Handler mHandler = new Handler() {
-	public void handleMessage(android.os.Message msg) {
-		int progress = mProgressBar.getProgress();
+	private Handler mHandler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			int progress = mProgressBar.getProgress();
 
-		mProgressBar.setProgress(++progress);
-		progressBar.setProgress(++progress);
-		mProgressBarRound.setProgress(++progress);
-		fanProgressBar.setProgress(++progress);
-		if (progress >= 100) {
-			mHandler.removeMessages(MSG_PROGRESS_UPDATE);
+			mProgressBar.setProgress(++progress);
+			progressBar.setProgress(++progress);
+			mProgressBarRound.setProgress(++progress);
 
-		}
-		mHandler.sendEmptyMessageDelayed(MSG_PROGRESS_UPDATE, 100);
+			if (progress >= 100) {
+				mHandler.removeMessages(MSG_PROGRESS_UPDATE);
+			}
+			mHandler.sendEmptyMessageDelayed(MSG_PROGRESS_UPDATE, 100);
+		};
 	};
-};
+
+	// 最简单的计时任务
+	private Handler handlerSimplest = new Handler();
+	private Runnable runnable = new Runnable() {
+		@Override
+		public void run() {
+			countSimplest--;
+			fanProgressBar.setProgress(countSimplest);
+			handlerSimplest.postDelayed(runnable, 100);
+		}
+	};
 }

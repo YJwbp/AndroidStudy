@@ -64,8 +64,9 @@ public class RoundProgressBarWithNumber extends HorizontalProgressBarWithNumber 
 			widthMeasureSpec = MeasureSpec.makeMeasureSpec(totalWidth,
 					MeasureSpec.EXACTLY);
 		}
+		setMeasuredDimension(widthMeasureSpec,heightMeasureSpec);
 
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
 	}
 
