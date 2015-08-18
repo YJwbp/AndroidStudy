@@ -27,4 +27,10 @@
     <dimen name="font_5">30sp</dimen>
     <dimen name="font_6">35sp</dimen>
 
+    <!-- 贝塞尔控件相关 -->
+    <dimen name="bezier_width">200dp</dimen>
+    <dimen name="bezier_height">100dp</dimen>
+    <dimen name="max_drag_length">300dp</dimen>
+    <dimen name="interval_narrowest">50dp</dimen>
+
 </resources>

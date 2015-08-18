@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:bezier="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rl_root"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.example.wbp.practice.views.BezierView
+        android:id="@+id/bezier"
+        android:layout_width="@dimen/bezier_width"
+        android:layout_height="@dimen/bezier_height"
+        android:layout_alignParentRight="true"
+        bezier:max_drag_length="@dimen/max_drag_length"
+        bezier:interval_narrowest="@dimen/interval_narrowest"
+        bezier:bezier_color="@color/color_item_10"
+        />
+</RelativeLayout>

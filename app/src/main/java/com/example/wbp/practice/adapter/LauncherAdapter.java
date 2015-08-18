@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.wbp.practice.views.LauncherAdapterItem_;
 import com.example.wbp.practice.views.LauncherAdapterItem;
+import com.example.wbp.practice.views.LauncherAdapterItem_;
 
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;

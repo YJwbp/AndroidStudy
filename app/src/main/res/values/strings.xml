@@ -10,4 +10,6 @@
     <string name="normal">普通</string>
     <string name="horizontal">水平带数字</string>
     <string name="round">环形带数字</string>
+
+    <string name="load">加载</string>
 </resources>

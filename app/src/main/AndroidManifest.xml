@@ -28,6 +28,22 @@
             android:name=".activity.CustomProgressBarActivity_"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.DrawingActivity_"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.MemoryLeakTestActivity_"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.TestActivity_"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.BezierActivity_"
+            android:label="@string/app_name" >
+        </activity>
 
     </application>
 
