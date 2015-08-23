@@ -5,20 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.wbp.practice.R;
@@ -39,7 +28,7 @@ public class CircularImageView extends ImageView {
 	protected void onDraw(Canvas canvas) {
 		// shader成功
 		Bitmap src = BitmapFactory.decodeResource(getResources(),
-				R.drawable.sss).copy(Bitmap.Config.ARGB_8888, true);
+				R.drawable.gaara).copy(Bitmap.Config.ARGB_8888, true);
 		int radius = src.getWidth() / 4;
 		BitmapShader bitmapShader = new BitmapShader(src,
 				Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);

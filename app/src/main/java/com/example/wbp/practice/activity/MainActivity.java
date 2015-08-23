@@ -31,7 +31,8 @@ public class MainActivity extends Activity {
 	String [] activities = {"com.example.wbp.practice.activity.VideoPlayAcitivity_", "com.example.wbp.practice.activity.ShapeSelectorActivity_",
 	"com.example.wbp.practice.activity.CustomProgressBarActivity_","com.example.wbp.practice.activity.CircularImageViewActivity_",
 			"com.example.wbp.practice.activity.MemoryLeakTestActivity_", "com.example.wbp.practice.activity.TestActivity_"
-			, "com.example.wbp.practice.activity.BezierActivity_"};
+			, "com.example.wbp.practice.activity.BezierActivity_", "com.example.wbp.practice.activity.CardViewActivity_"
+			, "com.example.wbp.practice.activity.RecyclerViewActivity_"};
 
 	@AfterViews
 	void afterViews() {

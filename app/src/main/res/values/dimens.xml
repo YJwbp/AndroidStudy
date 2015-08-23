@@ -33,4 +33,14 @@
     <dimen name="max_drag_length">300dp</dimen>
     <dimen name="interval_narrowest">50dp</dimen>
 
+    <dimen name="margin_1">5dp</dimen>
+    <dimen name="margin_2">10dp</dimen>
+    <dimen name="margin_3">15dp</dimen>
+    <dimen name="margin_4">20dp</dimen>
+    <dimen name="margin_5">25dp</dimen>
+    <dimen name="margin_6">30dp</dimen>
+
+    <!-- RecyclerView 相关 -->
+    <dimen name="list_item_height">200dp</dimen>
+
 </resources>
