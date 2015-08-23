@@ -37,39 +37,16 @@ public class CircularImageView extends ImageView {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
+		// shader成功
+		Bitmap src = BitmapFactory.decodeResource(getResources(),
 				R.drawable.sss).copy(Bitmap.Config.ARGB_8888, true);
-
-//		Canvas canvas1 = new Canvas(bitmap);
+		int radius = src.getWidth() / 4;
+		BitmapShader bitmapShader = new BitmapShader(src,
+				Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
 		Paint paint = new Paint();
-		paint.setColor(Color.GREEN);
-		paint.setStyle(Paint.Style.FILL);
-		paint.setStrokeWidth(3.0f);
-		canvas.drawBitmap(bitmap, 0, 0, paint);
-		paint.setAntiAlias(true); // 去锯齿
-		paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
-
-		int radius = bitmap.getWidth() / 4;
-
+		paint.setAntiAlias(true);
+		paint.setShader(bitmapShader);
 		canvas.drawCircle(radius, radius, radius, paint);
-
-		paint.setXfermode(null);//
-//		canvas.drawBitmap(bitmap, 0, 0, paint);
-
-		// // shader成功
-		// Bitmap src = BitmapFactory.decodeResource(getResources(),
-		// R.drawable.sss).copy(Bitmap.Config.ARGB_8888, true);
-		// int radius = src.getWidth() / 4;
-		// BitmapShader bitmapShader = new BitmapShader(src,
-		// Shader.TileMode.REPEAT,
-		// Shader.TileMode.REPEAT);
-		// Paint paint = new Paint();
-		// paint.setAntiAlias(true);
-		// paint.setShader(bitmapShader);
-		// canvas.drawCircle(radius,radius, radius, paint);
-
-		//
 	}
 
 }

@@ -3,6 +3,8 @@ package com.example.wbp.practice.activity;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -81,6 +83,7 @@ public class BezierActivity extends Activity {
 	private void update(int width) {
 		bezierView.updateWidth(width);
 		// 目前想不到其他方法，在View之外通知View重新测量
+		// requestLayout会导致调用measure layout,但是这需要我重写他们，因为我没有改变该View 的固有属性。
 		lp.width = width;
 		bezierView.setLayoutParams(lp);
 		// 重新测量了，必定会重绘，无需再调用

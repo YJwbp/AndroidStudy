@@ -32,7 +32,7 @@ import java.io.InputStream;
  * Created by new on 15/8/12.
  */
 @EActivity(R.layout.activity_draw)
-public class DrawingActivity extends Activity {
+public class CircularImageViewActivity extends Activity {
 	@ViewById(R.id.circular_image_view)
 	CircularImageView circularImageView;
 

@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 
 	// 以后添加新的Acitivity只需要在这里加入完整的类名即可
 	String [] activities = {"com.example.wbp.practice.activity.VideoPlayAcitivity_", "com.example.wbp.practice.activity.ShapeSelectorActivity_",
-	"com.example.wbp.practice.activity.CustomProgressBarActivity_","com.example.wbp.practice.activity.DrawingActivity_",
+	"com.example.wbp.practice.activity.CustomProgressBarActivity_","com.example.wbp.practice.activity.CircularImageViewActivity_",
 			"com.example.wbp.practice.activity.MemoryLeakTestActivity_", "com.example.wbp.practice.activity.TestActivity_"
 			, "com.example.wbp.practice.activity.BezierActivity_"};
 
