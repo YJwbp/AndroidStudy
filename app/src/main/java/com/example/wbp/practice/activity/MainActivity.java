@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.wbp.practice.adapter.LauncherAdapter;
 import com.example.wbp.practice.R;
@@ -21,6 +22,8 @@ import java.util.List;
 public class MainActivity extends Activity {
 	@ViewById(R.id.list_apps)
 	ListView listApps;
+	@ViewById(R.id.tv_maxMemo)
+	TextView tvMaxMemo;
 	@Bean
 	LauncherAdapter adapter;
 
@@ -36,6 +39,9 @@ public class MainActivity extends Activity {
 
 	@AfterViews
 	void afterViews() {
+		int maxMemory = (int)Runtime.getRuntime().maxMemory() / 1024;
+		String maxMemo = String.format(getString(R.string.max_memo),maxMemory+"");
+		tvMaxMemo.setText(maxMemo);
 		initLancher();
 		adapter.init();
 		adapter.setDatas(applications);

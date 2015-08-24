@@ -13,4 +13,5 @@
 
     <string name="load">加载</string>
     <string name="gaara">Gaara</string>
+    <string name="max_memo">最大可用内存：%s KB</string>
 </resources>
