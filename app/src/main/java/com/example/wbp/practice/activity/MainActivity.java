@@ -35,7 +35,8 @@ public class MainActivity extends Activity {
 	"com.example.wbp.practice.activity.CustomProgressBarActivity_","com.example.wbp.practice.activity.CircularImageViewActivity_",
 			"com.example.wbp.practice.activity.MemoryLeakTestActivity_", "com.example.wbp.practice.activity.TestActivity_"
 			, "com.example.wbp.practice.activity.BezierActivity_", "com.example.wbp.practice.activity.CardViewActivity_"
-			, "com.example.wbp.practice.activity.RecyclerViewActivity_"};
+			, "com.example.wbp.practice.activity.RecyclerViewActivity_", "com.example.wbp.practice.activity.GridPhotoWallActivity_"
+			, "com.example.wbp.practice.activity.LocationActivity_"};
 
 	@AfterViews
 	void afterViews() {
@@ -79,5 +80,7 @@ public class MainActivity extends Activity {
 
 		Intent intent = new Intent(this, classToStart);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.fade_in,
+				android.R.anim.fade_out);
 	}
 }

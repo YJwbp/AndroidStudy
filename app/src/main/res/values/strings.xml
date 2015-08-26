@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title">Demo List</string>
-<!--进度条相关-->
+    <!--进度条相关-->
     <string name="txt_start">开始</string>
     <string name="txt_pause">暂停</string>
     <string name="normal">普通</string>
@@ -14,4 +14,9 @@
     <string name="load">加载</string>
     <string name="gaara">Gaara</string>
     <string name="max_memo">最大可用内存：%s KB</string>
+
+    <string name="latitude">经度：</string>
+    <string name="longtitude">纬度：</string>
+    <string name="update">刷新</string>
+    <string name="others">其他信息</string>
 </resources>
