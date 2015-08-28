@@ -31,6 +31,8 @@ public class LocationActivity extends Activity {
 	TextView tvOthers;
 	@ViewById(R.id.btn_update)
 	Button btnUpdate;
+	@ViewById(R.id.tv_status)
+	TextView tvStatus;
 	@SystemService
 	LocationManager locationManager;
 
@@ -56,13 +58,13 @@ public class LocationActivity extends Activity {
 			}
 
 			@Override
-			public void onProviderEnabled(String s) {
-
+			public void onProviderEnabled(String provider) {
+				tvStatus.setText("Location onProvider Enabled : " + provider);
 			}
 
 			@Override
-			public void onProviderDisabled(String s) {
-
+			public void onProviderDisabled(String provider) {
+				tvStatus.setText("Location onProvider Disabled : " + provider);
 			}
 		};
 		updateLocation();
