@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.example.wbp.practice.R;
 import com.example.wbp.practice.bean.UniversalAdapter;
+import com.example.wbp.practice.bean.UniversalItem;
 import com.example.wbp.practice.bean.ViewHolder;
 
 import org.androidannotations.annotations.AfterViews;
@@ -23,19 +24,21 @@ public class UniversalAdapterActivity extends Activity {
 	@ViewById(R.id.list)
 	ListView listView;
 
-	List<String> listDatas = new ArrayList<String>();
-	UniversalAdapter<String> adapter;
+	UniversalAdapter<UniversalItem> adapter;
 	@AfterViews
 	void afterViews() {
-		for (int i = 0; i < 20; i++) {
-			listDatas.add(i, "" + i * 2);
-		}
-		adapter = new UniversalAdapter<String>(this, R.layout.item_text,
-				listDatas) {
+
+		List<UniversalItem> listDatas = new UniversalItem()
+				.getUniversalItems(20);
+
+		adapter = new UniversalAdapter<UniversalItem>(this,
+				R.layout.item_complex, listDatas) {
 			@Override
-			public void bindItem(ViewHolder holder, String item) {
-				TextView textView = holder.getView(R.id.text);
-				textView.setText(item);
+			public void bindItem(ViewHolder holder, UniversalItem item) {
+				holder.setText(R.id.tv_title, item.getTitle());
+				holder.setText(R.id.tv_describe, item.getDesc());
+				holder.setText(R.id.tv_time, item.getTime());
+				holder.setText(R.id.tv_phone, item.getPhone());
 			}
 		};
 		listView.setAdapter(adapter);

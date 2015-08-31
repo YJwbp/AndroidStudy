@@ -5,6 +5,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by new on 15/8/28.
@@ -21,8 +22,8 @@ public class ViewHolder {
 		mConvertView.setTag(this);
 	}
 
-	public static ViewHolder getViewHolder(Context context, View convertView, ViewGroup parent,
-			int layoutId, int position) {
+	public static ViewHolder getViewHolder(Context context, View convertView,
+			ViewGroup parent, int layoutId, int position) {
 		if (convertView == null) {
 			return new ViewHolder(context, parent, layoutId, position);
 		} else {
@@ -39,7 +40,11 @@ public class ViewHolder {
 		return (T) view;
 	}
 
-	public View getConvertView(){
+	public View getConvertView() {
 		return mConvertView;
+	}
+	public void setText(int resId, String text) {
+		TextView textView = getView(resId);
+		textView.setText(text);
 	}
 }
