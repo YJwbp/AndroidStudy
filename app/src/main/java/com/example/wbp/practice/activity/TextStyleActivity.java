@@ -8,8 +8,6 @@ import android.text.style.ImageSpan;
 import android.widget.EditText;
 
 import com.example.wbp.practice.R;
-import com.example.wbp.practice.bean.SizableImageSpan;
-
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
