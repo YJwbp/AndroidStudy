@@ -20,4 +20,8 @@
     <string name="update">刷新</string>
     <string name="others">其他信息</string>
     <string name="status">状态：</string>
+
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
 </resources>

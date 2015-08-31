@@ -3,7 +3,9 @@
     package="com.example.wbp.practice"
     android:versionCode="2015082811"
     android:versionName="1.1.0">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -76,6 +78,10 @@
         </activity>
         <activity
             android:name=".activity.TextStyleActivity_"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.FallPhotosActivity_"
             android:label="@string/app_name" >
         </activity>
     </application>

@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 			, "com.example.wbp.practice.activity.BezierActivity_", "com.example.wbp.practice.activity.CardViewActivity_"
 			, "com.example.wbp.practice.activity.RecyclerViewActivity_", "com.example.wbp.practice.activity.GridPhotoWallActivity_"
 			, "com.example.wbp.practice.activity.LocationActivity_", "com.example.wbp.practice.activity.UniversalAdapterActivity_"
-			, "com.example.wbp.practice.activity.TextStyleActivity_"};
+			, "com.example.wbp.practice.activity.TextStyleActivity_", "com.example.wbp.practice.activity.FallPhotosActivity_"};
 
 	@AfterViews
 	void afterViews() {

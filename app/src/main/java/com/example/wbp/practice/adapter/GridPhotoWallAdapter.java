@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.example.wbp.practice.R;
+import com.example.wbp.practice.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,11 @@ public class GridPhotoWallAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
+		long startTime = System.currentTimeMillis();
 		holder.imageView.setImageBitmap(decodeSampledBitmapFromResource(context.getResources(),datas.get(pos),100,100));
+		long endTime = System.currentTimeMillis();
+		long deltaTime = endTime - startTime;
+		Utils.debug(deltaTime+"");
 		return view;
 	}
 
