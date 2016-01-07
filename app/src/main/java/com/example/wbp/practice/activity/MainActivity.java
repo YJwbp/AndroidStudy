@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @EActivity(R.layout.activity_main)
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 	@ViewById(R.id.list_apps)
 	ListView listApps;
 	@ViewById(R.id.tv_maxMemo)

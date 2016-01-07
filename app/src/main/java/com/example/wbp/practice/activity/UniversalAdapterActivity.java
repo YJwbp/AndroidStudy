@@ -20,7 +20,7 @@ import java.util.List;
  * Created by new on 15/8/28.
  */
 @EActivity(R.layout.universal_adapter_activity)
-public class UniversalAdapterActivity extends Activity {
+public class UniversalAdapterActivity extends BaseActivity {
 	@ViewById(R.id.list)
 	ListView listView;
 

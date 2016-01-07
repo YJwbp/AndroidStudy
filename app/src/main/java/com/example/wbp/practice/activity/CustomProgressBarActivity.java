@@ -23,7 +23,7 @@ import android.widget.Toast;
  * Created by new on 15/8/10.
  */
 @EActivity(R.layout.activity_progress_bar_customed)
-public class CustomProgressBarActivity extends Activity {
+public class CustomProgressBarActivity extends BaseActivity {
 	@ViewById(R.id.progress_bar_horizontal)
 	HorizontalProgressBarWithNumber mProgressBar;
 	@ViewById(R.id.progress_bar_round)

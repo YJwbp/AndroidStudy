@@ -12,7 +12,7 @@ import com.example.wbp.practice.BuildConfig;
 public class Utils {
 	public static void debug(String str) {
 		if (BuildConfig.DEBUG) {
-			Log.d("practice", str);
+			Log.d("MyAndroid: ", str);
 		}
 	}
 

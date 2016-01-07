@@ -17,7 +17,7 @@ import org.androidannotations.annotations.ViewById;
  * Created by new on 15/8/9.
  */
 @EActivity(R.layout.activity_video_play)
-public class VideoPlayAcitivity extends Activity {
+public class VideoPlayAcitivity extends BaseActivity {
 	@ViewById
 	TextView textView;
 	@ViewById

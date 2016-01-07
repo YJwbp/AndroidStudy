@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * Created by new on 15/8/31.
  */
 @EActivity(R.layout.activity_text_style)
-public class TextStyleActivity extends Activity {
+public class TextStyleActivity extends BaseActivity {
 	@ViewById(R.id.et_emoji)
 	EditText etEmoji;
 

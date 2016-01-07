@@ -19,7 +19,7 @@ import java.util.Vector;
  * Created by new on 15/8/12.
  */
 @EActivity(R.layout.activity_memory_leak)
-public class MemoryLeakTestActivity extends Activity{
+public class MemoryLeakTestActivity extends BaseActivity{
 	@ViewById(R.id.btn_load)
 	Button btn;
 

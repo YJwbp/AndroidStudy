@@ -10,6 +10,9 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
         android:layout_margin="@dimen/margin_1">
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

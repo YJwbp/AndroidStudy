@@ -17,7 +17,7 @@ import java.util.List;
  * Created by new on 15/8/25.
  */
 @EActivity(R.layout.activity_grid_photo_wall)
-public class GridPhotoWallActivity extends Activity {
+public class GridPhotoWallActivity extends BaseActivity {
 	@ViewById(R.id.grid_view)
 	GridView gridView;
 

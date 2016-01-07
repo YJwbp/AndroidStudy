@@ -21,7 +21,7 @@ import java.util.List;
  * Created by new on 15/8/24.
  */
 @EActivity(R.layout.recycler_view_activity)
-public class RecyclerViewActivity extends Activity {
+public class RecyclerViewActivity extends BaseActivity {
 	@ViewById(R.id.list)
 	RecyclerView recyclerView;
 

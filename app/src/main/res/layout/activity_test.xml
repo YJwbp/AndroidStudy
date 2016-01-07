@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rl_root"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
+<RelativeLayout android:id="@+id/rl_root"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@color/color_item_10"
     >
 
@@ -15,29 +15,48 @@
         android:layout_centerVertical="true"
         android:background="@drawable/selector_btn_on_off"
         android:button="@null"
-        android:checked="false" />
+        android:checked="false"/>
 
     <Switch
+        android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch1"
-        android:button="@null"
-        android:background="@drawable/selector_btn_on_off"
         android:layout_above="@+id/check_real_time"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginStart="40dp"
+        android:background="@drawable/selector_btn_on_off"
+        android:button="@null"
+        android:text="New Switch"/>
 
     <ToggleButton
+        android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New ToggleButton"
-        android:button="@null"
-        android:background="@drawable/selector_btn_on_off"
-        android:id="@+id/toggleButton"
-        android:layout_below="@+id/check_real_time"
         android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1"/>
+        android:layout_alignStart="@+id/switch1"
+        android:layout_below="@+id/check_real_time"
+        android:background="@drawable/selector_btn_on_off"
+        android:button="@null"
+        android:text="New ToggleButton"/>
+    <com.example.wbp.practice.views.MyRelativeLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false"
+        >
+        <Button
+            android:id="@+id/btn1"
+            android:text="@string/abc_action_bar_home_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn2"
+            android:text="@string/abc_action_bar_home_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn1"/>
+    </com.example.wbp.practice.views.MyRelativeLayout>
+
 </RelativeLayout>

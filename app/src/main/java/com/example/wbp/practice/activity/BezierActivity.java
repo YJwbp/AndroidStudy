@@ -22,7 +22,7 @@ import org.androidannotations.annotations.ViewById;
  * Created by new on 15/8/16.
  */
 @EActivity(R.layout.activity_bezier)
-public class BezierActivity extends Activity {
+public class BezierActivity extends BaseActivity {
 	@ViewById(R.id.bezier)
 	BezierView bezierView;
 	@ViewById(R.id.rl_root)

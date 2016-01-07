@@ -22,7 +22,7 @@ import org.androidannotations.annotations.ViewById;
  * Created by new on 15/8/27.
  */
 @EActivity(R.layout.activity_location)
-public class LocationActivity extends Activity {
+public class LocationActivity extends BaseActivity {
 	@ViewById(R.id.tv_lat)
 	TextView tvLat;
 	@ViewById(R.id.tv_lont)
