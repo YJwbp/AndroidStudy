@@ -28,7 +28,7 @@
         android:layout_below="@+id/progress_bar_normal"
         android:textSize="@dimen/font_4"
         android:text="@string/horizontal"/>
-    <com.example.wbp.practice.views.HorizontalProgressBarWithNumber
+    <com.bpwei.examples.views.HorizontalProgressBarWithNumber
         android:id="@+id/progress_bar_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         android:layout_below="@+id/progress_bar_horizontal"
         android:textSize="@dimen/font_4"
         android:text="@string/round"/>
-    <com.example.wbp.practice.views.RoundProgressBarWithNumber
+    <com.bpwei.examples.views.RoundProgressBarWithNumber
         android:id="@+id/progress_bar_round"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
         progress:progress_text_size="@dimen/font_4"
         round:radius="@dimen/radius"
         />
-    <com.example.wbp.practice.views.FanProgressBar
+    <com.bpwei.examples.views.FanProgressBar
         android:id="@+id/progress_bar_fan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

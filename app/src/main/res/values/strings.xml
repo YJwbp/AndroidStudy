@@ -24,4 +24,9 @@
     <string name="border_top">Border Top</string>
     <string name="border_bottom">Border Bottom</string>
     <string name="image_url">Image Url</string>
+
+    <!-- 矢量字体 -->
+    <string name="font_back">B</string>
+    <string name="font_next">A</string>
+    <string name="font_love">C</string>
 </resources>

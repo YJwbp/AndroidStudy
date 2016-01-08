@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.example.wbp.practice.views.BezierView
+    <com.bpwei.examples.views.BezierView
         android:id="@+id/bezier"
         android:layout_width="@dimen/bezier_width"
         android:layout_height="@dimen/bezier_height"
