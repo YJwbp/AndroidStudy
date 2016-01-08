@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 			, "com.bpwei.examples.activity.BezierActivity_", "com.bpwei.examples.activity.CardViewActivity_"
 			, "com.bpwei.examples.activity.RecyclerViewActivity_", "com.bpwei.examples.activity.GridPhotoWallActivity_"
 			, "com.bpwei.examples.activity.LocationActivity_", "com.bpwei.examples.activity.UniversalAdapterActivity_"
-			, "com.bpwei.examples.activity.TextStyleActivity_", "com.bpwei.examples.activity.FallPhotosActivity_"};
+			, "com.bpwei.examples.activity.TextStyleActivity_", "com.bpwei.examples.activity.FallPhotosActivity_","com.bpwei.examples.activity.FaceDetectActivity_"};
 
 	@AfterViews
 	void afterViews() {
