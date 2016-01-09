@@ -34,4 +34,6 @@
     <color name="color_item_13">#26F792</color>
     <color name="color_item_14">#B53DFA</color>
     <color name="color_item_15">#FD8238</color>
+
+    <color name="color_red">#FFFF0000</color>
 </resources>
