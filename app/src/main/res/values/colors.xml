@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="app_color">#88BB44</color>
+    <color name="bg_white_100">#FFFFFFFF</color>
     <color name="bg_white_90">#e5ffffff</color>
     <color name="bg_white_80">#ccffffff</color>
     <color name="bg_white_70">#b2ffffff</color>

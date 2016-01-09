@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">MyAndroid</string>
 
+    <!-- 通用文案 -->
+    <string name="back">返回</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="next">下一步</string>
+    <string name="pre">上一步</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title">Demo List</string>

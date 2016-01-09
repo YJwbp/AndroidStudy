@@ -22,7 +22,7 @@ public class IconFontTextView extends TextView {
 	}
 
 	@AfterInject
-	void afterViews(){
+	void afterInject(){
 		Typeface iconTypeface = Typeface.createFromAsset(getContext().getAssets(),"IconFont.ttf");
 		setTypeface(iconTypeface);
 	}
