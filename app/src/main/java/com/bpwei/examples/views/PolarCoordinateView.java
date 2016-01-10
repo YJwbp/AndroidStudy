@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.bpwei.examples.R;
-import com.bpwei.examples.entites.PolorPoint;
+import com.bpwei.examples.entites.PolarPoint;
 import com.bpwei.examples.sp.ScreenSP_;
 import com.bpwei.examples.utils.Utils;
 
@@ -49,7 +49,10 @@ public class PolarCoordinateView extends View {
 
 	// 保存
 	private List<Point> selectedPosList = new ArrayList<>();
-	private PolorPoint[][] polarPoints; // 极坐标
+	private List<PolarPoint> polarPointsSelectedList = new ArrayList<>();
+	private PolarPoint[][] polarPoints; // 极坐标
+	private PolarPoint[][] polarPointsSelected; // 极坐标——已选择
+
 	private PointF[][] xyCenterPoints; // 直角坐标系 原点在中心
 	private float[] xyCenterPoints1d;
 	private PointF[][] xyCornerPoints; // 直角坐标系 原点在左上角
@@ -82,7 +85,6 @@ public class PolarCoordinateView extends View {
 
 	@AfterViews
 	void afterViews() {
-		selectedXYCoordinates.add(new PointF(540,540));
 		init();
 	}
 
@@ -135,23 +137,11 @@ public class PolarCoordinateView extends View {
 		}
 
 		// 绘制所有已选点
-//		if (xyCornerPoints1dSelected != null) {
-//			canvas.drawPoints(xyCornerPoints1dSelected, redDotPain);
-//		}
 		for (PointF point :selectedXYCoordinates) {
 			canvas.drawPoint(point.x, point.y, redDotPain);
 			Utils.debug("Point Draw: x="+point.x+" y="+point.y);
 		}
 
-		canvas.drawPoint(675, 306, redDotPain);
-
-		if (X == null || Y == null || rawX == null || rawY == null) {
-			return;
-		}
-		canvas.drawText(X, 0, 0, lightLinePain);
-		canvas.drawText(Y, 200, 0, lightLinePain);
-		canvas.drawText(rawX, 400, 0, lightLinePain);
-		canvas.drawText(rawY, 600, 0, lightLinePain);
 	}
 
 	private void init() {
@@ -193,11 +183,11 @@ public class PolarCoordinateView extends View {
 		xyCenterPoint.x = 0;
 		xyCenterPoint.y = 0;
 
-		polarPoints = new PolorPoint[circleNumber][rayNumber];
+		polarPoints = new PolarPoint[circleNumber][rayNumber];
 
 		for (int circle = 0; circle < circleNumber; circle++) {
 			for (int ray = 0; ray < rayNumber; ray++) {
-				polarPoints[circle][ray] = new PolorPoint();
+				polarPoints[circle][ray] = new PolarPoint();
 
 				polarPoints[circle][ray].setAngle((ray + 1) * CIRCLE_FULL_ANGLE / rayNumber);
 				polarPoints[circle][ray].setRadius((circle + 1) * drawingAreaRadius / circleNumber);
@@ -339,7 +329,7 @@ public class PolarCoordinateView extends View {
 						return;
 					}
 					selectedPosList.add(new Point(circlePos, rayPos));
-
+					polarPointsSelectedList.add(polarPoints[circlePos][rayPos]); // 保存已选择的极坐标，以进行输出
 					polarPoints[circlePos][rayPos].setIsSelected(true);
 					PointF selectedPoint = getXYCornerPointFromPolar(polarPoints[circlePos][rayPos]);
 					selectedXYCoordinates.add(selectedPoint);
@@ -370,7 +360,7 @@ public class PolarCoordinateView extends View {
 
 	}
 
-	private PointF getXYCornerPointFromPolar(PolorPoint polarPoint) {
+	private PointF getXYCornerPointFromPolar(PolarPoint polarPoint) {
 		if (polarPoint == null) {
 			return null;
 		}
@@ -407,5 +397,12 @@ public class PolarCoordinateView extends View {
 		this.circleNumber = circleNumber;
 	}
 
-	
+	public List<PolarPoint> getSelecetedPoints(){
+		return polarPointsSelectedList;
+	}
+
+	public void clearPolarMap(){
+		selectedXYCoordinates.clear();
+		invalidate();
+	}
 }

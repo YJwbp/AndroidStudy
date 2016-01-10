@@ -5,7 +5,7 @@ package com.bpwei.examples.entites;
  * 角度为 0-360
  * Created by new on 16/1/9.
  */
-public class PolorPoint {
+public class PolarPoint {
 	private float radius;
 	private float angle;
 	private boolean isSelected;
@@ -36,7 +36,7 @@ public class PolorPoint {
 
 	@Override
 	public String toString() {
-		return "PolorPoint{" +
+		return "PolarPoint{" +
 				"radius=" + radius +
 				", angle=" + angle +
 				", isSelected=" + isSelected +
