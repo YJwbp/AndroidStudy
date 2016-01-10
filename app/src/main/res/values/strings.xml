@@ -33,7 +33,10 @@
     <string name="border_top">Border Top</string>
     <string name="border_bottom">Border Bottom</string>
     <string name="image_url">Image Url</string>
-
+    <!-- 极坐标界面 -->
+    <string name="clear">清除</string>
+    <string name="send">发送</string>
+    <string name="find_blue_tooth">搜索蓝牙设备</string>
     <!-- 矢量字体 -->
     <string name="font_back">B</string>
     <string name="font_next">A</string>

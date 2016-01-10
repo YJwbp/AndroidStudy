@@ -89,6 +89,10 @@
             android:name=".activity.FallPhotosActivity_"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.PolarCoordinateActivity_"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

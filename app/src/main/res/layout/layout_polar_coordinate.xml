@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_title_h"/>
+
+    <com.bpwei.examples.views.PolarCoordinateView_
+        android:id="@+id/v_polar_coordinate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_item_12"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/layout_title_h"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tv_clear"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/layout_title_h"
+            android:background="@color/app_color"
+            android:gravity="center"
+            android:text="@string/clear"
+            android:textColor="@color/bg_white_100"
+            android:textSize="@dimen/font_3"/>
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/layout_title_h"
+            android:layout_marginLeft="@dimen/btn_margin"
+            android:layout_toEndOf="@id/tv_clear"
+            android:layout_toRightOf="@id/tv_clear"
+            android:background="@color/app_color"
+            android:gravity="center"
+            android:text="@string/send"
+            android:textColor="@color/bg_white_100"
+            android:textSize="@dimen/font_3"/>
+    </RelativeLayout>
+</RelativeLayout>

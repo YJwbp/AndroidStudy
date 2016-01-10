@@ -1,6 +1,7 @@
 package com.bpwei.examples.activity;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -8,11 +9,14 @@ import android.widget.TextView;
 
 import com.bpwei.examples.R;
 import com.bpwei.examples.adapter.LauncherAdapter;
+import com.bpwei.examples.sp.ScreenSP_;
+import com.bpwei.examples.utils.Utils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +29,8 @@ public class MainActivity extends BaseActivity {
 	TextView tvMaxMemo;
 	@Bean
 	LauncherAdapter adapter;
+	@Pref
+	ScreenSP_ screenSP;
 
 	List<String> applications;
 	private final String PKG_NAME = "com.bpwei.examples.activity.";
@@ -36,7 +42,8 @@ public class MainActivity extends BaseActivity {
 			, "com.bpwei.examples.activity.BezierActivity_", "com.bpwei.examples.activity.CardViewActivity_"
 			, "com.bpwei.examples.activity.RecyclerViewActivity_", "com.bpwei.examples.activity.GridPhotoWallActivity_"
 			, "com.bpwei.examples.activity.LocationActivity_", "com.bpwei.examples.activity.UniversalAdapterActivity_"
-			, "com.bpwei.examples.activity.TextStyleActivity_", "com.bpwei.examples.activity.FallPhotosActivity_","com.bpwei.examples.activity.FaceDetectActivity_"};
+			, "com.bpwei.examples.activity.TextStyleActivity_", "com.bpwei.examples.activity.FallPhotosActivity_"
+			,"com.bpwei.examples.activity.FaceDetectActivity_","com.bpwei.examples.activity.PolarCoordinateActivity_"};
 
 	@AfterViews
 	void afterViews() {
@@ -50,12 +57,17 @@ public class MainActivity extends BaseActivity {
 		listApps.setAdapter(adapter);
 		listApps.setFooterDividersEnabled(true);
 		listApps.setHeaderDividersEnabled(true);
-		listApps.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+		listApps.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 				start(i);
 			}
 		});
+
+		Point point = Utils.getScreenSize(this);
+		screenSP.width().put(point.x);
+		screenSP.height().put(point.y);
+		screenSP.edit().width().put(point.x).height().put(point.y).apply();
 	}
 
 	private void initLancher() {
