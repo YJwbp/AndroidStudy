@@ -21,4 +21,15 @@
         android:gravity="center"
         android:textColor="@color/bg_white_100"
         android:textSize="@dimen/font_3"/>
+
+    <com.bpwei.examples.views.IconFontTextView_
+        android:id="@+id/itv_title_right"
+        android:layout_width="@dimen/layout_title_h"
+        android:layout_height="@dimen/layout_title_h"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="@string/font_option"
+        android:textColor="@color/bg_white_100"
+        android:textSize="@dimen/font_3"/>
 </RelativeLayout>

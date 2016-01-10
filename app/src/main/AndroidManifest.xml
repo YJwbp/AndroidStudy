@@ -22,11 +22,11 @@
         <activity
             android:name=".activity.MainActivity_"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activity.FaceDetectActivity_"
@@ -95,8 +95,15 @@
         <activity
             android:name=".activity.PolarCoordinateActivity_"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
+        <activity
+            android:name=".activity.PolarSettingActivity_"
+            android:label="@string/app_name" >
+        </activity>
         <activity android:name=".activity.BluetoothChatActivity_"
                   android:theme="@style/AppTheme"
                   android:label="@string/app_name"

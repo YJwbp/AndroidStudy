@@ -30,6 +30,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/app_color">
+
+        <TextView
+            android:id="@+id/btn_send_coordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/layout_title_h"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/send_coordinates"
+            android:textColor="@color/bg_white_100"
+            android:textSize="@dimen/font_3"/>
     </RelativeLayout>
 
     <RelativeLayout

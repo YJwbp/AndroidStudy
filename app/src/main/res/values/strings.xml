@@ -1,5 +1,5 @@
 <resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
-    <string name="app_name">MyAndroid</string>
+    <string name="app_name">Polar</string>
 
     <!-- 通用文案 -->
     <string name="back">返回</string>
@@ -37,6 +37,10 @@
     <string name="clear">清除</string>
     <string name="check">查看</string>
     <string name="send">发送</string>
+    <string name="circle_number">圆数</string>
+    <string name="ray_number">射线数</string>
+    <string name="params_setting">参数设置</string>
+    <string name="send_coordinates">发送坐标</string>
     <string name="find_blue_tooth">搜索蓝牙设备</string>
 
     <!--  BluetoothChat -->
@@ -59,9 +63,11 @@
     <string name="secure_connect">Connect a device - Secure</string>
     <string name="insecure_connect">Connect a device - Insecure</string>
     <string name="discoverable">Make discoverable</string>
+    <string name="disConnect">Disconnect</string>
 
     <!-- 矢量字体 -->
     <string name="font_back">B</string>
     <string name="font_next">A</string>
     <string name="font_love">C</string>
+    <string name="font_option">D</string>
 </resources>

@@ -30,11 +30,13 @@ public class PolarCoordinateView extends View {
 	@Pref
 	ScreenSP_ screenSP;
 
-	private final int RAY_NUMBER_DEFAULT = 12;
-	private final int CIRCLE_NUMBER_DEFAULT = 6;
+	private final int RAY_NUMBER_DEFAULT = 24;
+	private final int CIRCLE_NUMBER_DEFAULT = 10;
 	private final float CIRCLE_FULL_ANGLE = 360F;
 	private final float ANGLE_TO_RADIAN_FACTOR = (float) Math.PI / 180;
 	private final double ZERO = 0.01;
+	private final int ANGLE_NORM = 3;
+	private final int RADIUS_NORM = 10;
 
 	private float viewWidth;
 	private float drawingAreaRadius;
@@ -68,6 +70,9 @@ public class PolarCoordinateView extends View {
 	Paint redDotPain;
 	Paint lightLinePain;
 	Paint darkLinePain;
+
+	double deltaAngle;
+	double deltaLenth;
 
 	String X, Y, rawX, rawY;
 
@@ -182,6 +187,9 @@ public class PolarCoordinateView extends View {
 		xyCenterPoint = new PointF();
 		xyCenterPoint.x = 0;
 		xyCenterPoint.y = 0;
+
+		deltaAngle = 360 / rayNumber;
+		deltaLenth = viewWidth / 2 / circleNumber;
 
 		polarPoints = new PolarPoint[circleNumber][rayNumber];
 
@@ -302,8 +310,6 @@ public class PolarCoordinateView extends View {
 		double lenth = getDistance(new PointF(x, y), xyCenterPoint);
 		// 判断归属
 
-		double deltaAngle = 360 / rayNumber;
-		double deltaLenth = viewWidth / 2 / circleNumber;
 		int rayPosFloor = ((int) (angle / deltaAngle)-1+rayNumber)%rayNumber;
 		int circlePosFloor = (int) (lenth / deltaLenth)-1;
 
@@ -387,6 +393,10 @@ public class PolarCoordinateView extends View {
 
 	public void setRayNumber(int rayNumber) {
 		this.rayNumber = rayNumber;
+		clearPolarMap();
+
+		initCoordinates();
+		invalidate();
 	}
 
 	public int getCircleNumber() {
@@ -395,14 +405,42 @@ public class PolarCoordinateView extends View {
 
 	public void setCircleNumber(int circleNumber) {
 		this.circleNumber = circleNumber;
+		clearPolarMap();
+
+		initCoordinates();
+		invalidate();
 	}
 
 	public List<PolarPoint> getSelecetedPoints(){
 		return polarPointsSelectedList;
 	}
 
+	public float[] getSelectedPointsArray(){
+		float [] points = new float[polarPointsSelectedList.size()*2];
+		for(int i=0;i<polarPointsSelectedList.size();i++){
+			points[i*2] = polarPointsSelectedList.get(i).getRadius();
+			points[i*2+1] = polarPointsSelectedList.get(i).getAngle();
+		}
+		return points;
+	}
+
+	/**
+	 * 返回选中的点的相对坐标;因为要求射线条数为3的倍数，且最多为120；同心圆为30的约数
+	 * @return
+	 */
+	public byte[] getSelectedPointsBytes(){
+		byte[] pointsByte = new byte[polarPointsSelectedList.size()*2];
+		for(int i=0;i<polarPointsSelectedList.size();i++){
+			pointsByte[i*2] = (byte)(polarPointsSelectedList.get(i).getRadius()/deltaLenth);
+			pointsByte[i*2+1] = (byte)(polarPointsSelectedList.get(i).getAngle()/deltaAngle);
+		}
+		return pointsByte;
+	}
+
 	public void clearPolarMap(){
 		selectedXYCoordinates.clear();
+		polarPointsSelectedList.clear();
 		invalidate();
 	}
+
 }

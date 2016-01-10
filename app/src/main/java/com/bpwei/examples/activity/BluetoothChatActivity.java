@@ -40,19 +40,35 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bpwei.examples.MainApp;
 import com.bpwei.examples.R;
 import com.bpwei.examples.bean.BluetoothChatService;
+import com.bpwei.examples.constant.ExtraInfo;
 import com.bpwei.examples.utils.Utils;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.App;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
 /**
- * This is the activity_bluetooth_chat Activity that displays the current chat session.
+ * This is the activity_bluetooth_chat Activity that displays the current chat
+ * session.
  */
 @EActivity(R.layout.activity_bluetooth_chat)
 public class BluetoothChatActivity extends BaseActivity {
+
+	@ViewById(R.id.tv_title)
+	TextView tvTitle;
+
+	@Extra(ExtraInfo.POLAR_COORDINATES)
+	byte[] polarCoordinates;
+
+	@App
+	MainApp app;
+
 	// Debugging
 	private static final String TAG = "BluetoothChat";
 	private static final boolean D = true;
@@ -89,17 +105,15 @@ public class BluetoothChatActivity extends BaseActivity {
 	// Member object for the chat services
 	private BluetoothChatService mChatService = null;
 
-@ViewById(R.id.tv_title)
-TextView tvTitle;
-
 	@AfterViews
-	void afterViews(){
+	void afterViews() {
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
 		// If the adapter is null, then Bluetooth is not supported
 		if (mBluetoothAdapter == null) {
-			Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Bluetooth is not available",
+					Toast.LENGTH_LONG).show();
 			finish();
 			return;
 		}
@@ -111,13 +125,15 @@ TextView tvTitle;
 		// If BT is not on, request that it be enabled.
 		// setupChat() will then be called during onActivityResult
 		if (!mBluetoothAdapter.isEnabled()) {
-			Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			Intent enableIntent = new Intent(
+					BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
-			//	mBluetoothAdapter.enable();
-			//	 setupChat();
+			// mBluetoothAdapter.enable();
+			// setupChat();
 			// Otherwise, setup the chat session
 		} else {
-			if (mChatService == null) setupChat();
+			if (mChatService == null)
+				setupChat();
 		}
 	}
 
@@ -126,9 +142,11 @@ TextView tvTitle;
 		super.onResume();
 		// Performing this check in onResume() covers the case in which BT was
 		// not enabled during onStart(), so we were paused to enable it...
-		// onResume() will be called when ACTION_REQUEST_ENABLE activity returns.
+		// onResume() will be called when ACTION_REQUEST_ENABLE activity
+		// returns.
 		if (mChatService != null) {
-			// Only if the state is STATE_NONE, do we know that we haven't started already
+			// Only if the state is STATE_NONE, do we know that we haven't
+			// started already
 			if (mChatService.getState() == BluetoothChatService.STATE_NONE) {
 				// Start the Bluetooth chat services
 				mChatService.start();
@@ -137,11 +155,19 @@ TextView tvTitle;
 		}
 	}
 
+	@Click(R.id.btn_send_coordinates)
+	void sendCoordinatesClick() {
+		if (polarCoordinates == null) {
+			return;
+		}
+		sendByteCoordinates(polarCoordinates);
+	}
 	private void setupChat() {
 		Utils.debug("setupChat()");
 
 		// Initialize the array adapter for the conversation thread
-		mConversationArrayAdapter = new ArrayAdapter<String>(this, R.layout.message);
+		mConversationArrayAdapter = new ArrayAdapter<String>(this,
+				R.layout.message);
 		mConversationView = (ListView) findViewById(R.id.lv_chat_list);
 		mConversationView.setAdapter(mConversationArrayAdapter);
 
@@ -172,27 +198,33 @@ TextView tvTitle;
 		super.onDestroy();
 
 		// Stop the Bluetooth chat services
-		if (mChatService != null) mChatService.stop();
+		if (mChatService != null)
+			mChatService.stop();
 	}
 
 	private void ensureDiscoverable() {
-		if(D) Log.d(TAG, "ensure discoverable");
-		if (mBluetoothAdapter.getScanMode() !=
-				BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
-			Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-			discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+		if (D)
+			Log.d(TAG, "ensure discoverable");
+		if (mBluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
+			Intent discoverableIntent = new Intent(
+					BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+			discoverableIntent.putExtra(
+					BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
 			startActivity(discoverableIntent);
 		}
 	}
 
 	/**
 	 * Sends a message.
-	 * @param message  A string of text to send.
+	 * 
+	 * @param message
+	 *            A string of text to send.
 	 */
 	private void sendMessage(String message) {
 		// Check that we're actually connected before trying anything
 		if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
-			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT)
+					.show();
 			return;
 		}
 
@@ -207,20 +239,40 @@ TextView tvTitle;
 			mOutEditText.setText(mOutStringBuffer);
 		}
 	}
+	
+	private void sendByteCoordinates(byte[] coord) {
+		// Check that we're actually connected before trying anything
+		if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
+			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT)
+					.show();
+			return;
+		}
+		// Check that there's actually something to send
+		if (coord != null && coord.length > 0) {
+			mChatService.write(coord);
+
+			app.toast(String.valueOf(coord));
+			// Reset out string buffer to zero and clear the edit text field
+			mOutStringBuffer.setLength(0);
+		}
+	}
 
 	// The action listener for the EditText widget, to listen for the return key
-	private TextView.OnEditorActionListener mWriteListener =
-			new TextView.OnEditorActionListener() {
-				public boolean onEditorAction(TextView view, int actionId, KeyEvent event) {
-					// If the action is a key-up event on the return key, send the message
-					if (actionId == EditorInfo.IME_NULL && event.getAction() == KeyEvent.ACTION_UP) {
-						String message = view.getText().toString();
-						sendMessage(message);
-					}
-					if(D) Log.i(TAG, "END onEditorAction");
-					return true;
-				}
-			};
+	private TextView.OnEditorActionListener mWriteListener = new TextView.OnEditorActionListener() {
+		public boolean onEditorAction(TextView view, int actionId,
+				KeyEvent event) {
+			// If the action is a key-up event on the return key, send the
+			// message
+			if (actionId == EditorInfo.IME_NULL
+					&& event.getAction() == KeyEvent.ACTION_UP) {
+				String message = view.getText().toString();
+				sendMessage(message);
+			}
+			if (D)
+				Log.i(TAG, "END onEditorAction");
+			return true;
+		}
+	};
 
 	private void setStatus(int resId) {
 		tvTitle.setText(resId);
@@ -235,64 +287,70 @@ TextView tvTitle;
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-				case MESSAGE_STATE_CHANGE:
-					if(D) Log.i(TAG, "MESSAGE_STATE_CHANGE: " + msg.arg1);
+				case MESSAGE_STATE_CHANGE :
+					if (D)
+						Log.i(TAG, "MESSAGE_STATE_CHANGE: " + msg.arg1);
 					switch (msg.arg1) {
-						case BluetoothChatService.STATE_CONNECTED:
-							setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
+						case BluetoothChatService.STATE_CONNECTED :
+							setStatus(getString(R.string.title_connected_to,
+									mConnectedDeviceName));
 							mConversationArrayAdapter.clear();
 							break;
-						case BluetoothChatService.STATE_CONNECTING:
+						case BluetoothChatService.STATE_CONNECTING :
 							setStatus(R.string.title_connecting);
 							break;
-						case BluetoothChatService.STATE_LISTEN:
-						case BluetoothChatService.STATE_NONE:
+						case BluetoothChatService.STATE_LISTEN :
+						case BluetoothChatService.STATE_NONE :
 							setStatus(R.string.title_not_connected);
 							break;
 					}
 					break;
-				case MESSAGE_WRITE:
+				case MESSAGE_WRITE :
 					byte[] writeBuf = (byte[]) msg.obj;
 					// construct a string from the buffer
 					String writeMessage = new String(writeBuf);
 					mConversationArrayAdapter.add("Me:  " + writeMessage);
 					break;
-				case MESSAGE_READ:
+				case MESSAGE_READ :
 					byte[] readBuf = (byte[]) msg.obj;
 					// construct a string from the valid bytes in the buffer
 					String readMessage = new String(readBuf, 0, msg.arg1);
-					mConversationArrayAdapter.add(mConnectedDeviceName+":  " + readMessage);
+					mConversationArrayAdapter.add(mConnectedDeviceName + ":  "
+							+ readMessage);
 					break;
-				case MESSAGE_DEVICE_NAME:
+				case MESSAGE_DEVICE_NAME :
 					// save the connected device's name
 					mConnectedDeviceName = msg.getData().getString(DEVICE_NAME);
-					Toast.makeText(getApplicationContext(), "Connected to: "
-							+ mConnectedDeviceName, Toast.LENGTH_SHORT).show();
-					break;
-				case MESSAGE_TOAST:
-					Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST),
+					Toast.makeText(getApplicationContext(),
+							"Connected to: " + mConnectedDeviceName,
 							Toast.LENGTH_SHORT).show();
+					break;
+				case MESSAGE_TOAST :
+					Toast.makeText(getApplicationContext(),
+							msg.getData().getString(TOAST), Toast.LENGTH_SHORT)
+							.show();
 					break;
 			}
 		}
 	};
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if(D) Log.d(TAG, "onActivityResult " + resultCode);
+		if (D)
+			Log.d(TAG, "onActivityResult " + resultCode);
 		switch (requestCode) {
-			case REQUEST_CONNECT_DEVICE_SECURE:
+			case REQUEST_CONNECT_DEVICE_SECURE :
 				// When DeviceListActivity returns with a device to connect
 				if (resultCode == Activity.RESULT_OK) {
 					connectDevice(data, true);
 				}
 				break;
-			case REQUEST_CONNECT_DEVICE_INSECURE:
+			case REQUEST_CONNECT_DEVICE_INSECURE :
 				// When DeviceListActivity returns with a device to connect
 				if (resultCode == Activity.RESULT_OK) {
 					connectDevice(data, false);
 				}
 				break;
-			case REQUEST_ENABLE_BT:
+			case REQUEST_ENABLE_BT :
 				// When the request to enable Bluetooth returns
 				if (resultCode == Activity.RESULT_OK) {
 					// Bluetooth is now enabled, so set up a chat session
@@ -300,7 +358,8 @@ TextView tvTitle;
 				} else {
 					// User did not enable Bluetooth or an error occurred
 					Log.d(TAG, "BT not enabled");
-					Toast.makeText(this, R.string.bt_not_enabled_leaving, Toast.LENGTH_SHORT).show();
+					Toast.makeText(this, R.string.bt_not_enabled_leaving,
+							Toast.LENGTH_SHORT).show();
 					finish();
 				}
 		}
@@ -308,8 +367,8 @@ TextView tvTitle;
 
 	private void connectDevice(Intent data, boolean secure) {
 		// Get the device MAC address
-		String address = data.getExtras()
-				.getString(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
+		String address = data.getExtras().getString(
+				DeviceListActivity.EXTRA_DEVICE_ADDRESS);
 		// Get the BluetoothDevice object
 		BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
 		// Attempt to connect to the device
@@ -327,17 +386,25 @@ TextView tvTitle;
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent serverIntent = null;
 		switch (item.getItemId()) {
-			case R.id.secure_connect_scan:
+			case R.id.secure_connect_scan :
 				// Launch the DeviceListActivity to see devices and do scan
 				serverIntent = new Intent(this, DeviceListActivity.class);
-				startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
+				startActivityForResult(serverIntent,
+						REQUEST_CONNECT_DEVICE_SECURE);
 				return true;
-			case R.id.insecure_connect_scan:
+			case R.id.insecure_connect_scan :
 				// Launch the DeviceListActivity to see devices and do scan
 				serverIntent = new Intent(this, DeviceListActivity.class);
-				startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
+				startActivityForResult(serverIntent,
+						REQUEST_CONNECT_DEVICE_INSECURE);
 				return true;
-			case R.id.discoverable:
+			case R.id.disconnect :
+				// Stop the Bluetooth chat services
+				if (mChatService != null) {
+					mChatService.stop();
+				}
+				return true;
+			case R.id.discoverable :
 				// Ensure this device is discoverable by others
 				ensureDiscoverable();
 				return true;
@@ -345,5 +412,8 @@ TextView tvTitle;
 		return false;
 	}
 
+	@Click(R.id.title_back)
+	void backClick(){
+		onBackPressed();
+	}
 }
-
