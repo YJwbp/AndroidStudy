@@ -65,6 +65,7 @@
     <dimen name="layout_title_h">50dp</dimen>
 
     <!-- 极坐标相关-->
-    <dimen name="btn_width">150dp</dimen>
+    <dimen name="btn_width">100dp</dimen>
     <dimen name="btn_margin">20dp</dimen>
+    <dimen name="list_margin">10dp</dimen>
 </resources>

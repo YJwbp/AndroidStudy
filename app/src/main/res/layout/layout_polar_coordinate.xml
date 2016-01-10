@@ -45,5 +45,27 @@
             android:text="@string/send"
             android:textColor="@color/bg_white_100"
             android:textSize="@dimen/font_3"/>
+
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/layout_title_h"
+            android:background="@color/app_color"
+            android:layout_marginLeft="@dimen/btn_margin"
+            android:layout_toEndOf="@id/tv_send"
+            android:layout_toRightOf="@id/tv_send"
+            android:gravity="center"
+            android:text="@string/check"
+            android:textColor="@color/bg_white_100"
+            android:textSize="@dimen/font_3"/>
     </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_coordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_above="@id/rl_bottom"
+        android:layout_marginLeft="@dimen/list_margin"
+        android:layout_marginRight="@dimen/list_margin"/>
 </RelativeLayout>
