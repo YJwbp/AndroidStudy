@@ -160,7 +160,13 @@ public class BluetoothChatActivity extends BaseActivity {
 		if (polarCoordinates == null) {
 			return;
 		}
-		sendByteCoordinates(polarCoordinates);
+		// 增加结束符号 127
+		byte[] messageWithTerminator = new byte[polarCoordinates.length + 1];
+		System.arraycopy(polarCoordinates, 0, messageWithTerminator, 0,
+				polarCoordinates.length);
+		messageWithTerminator[polarCoordinates.length] = 127;
+
+		sendByteCoordinates(messageWithTerminator);
 	}
 	private void setupChat() {
 		Utils.debug("setupChat()");
