@@ -43,7 +43,7 @@ public class PolarCoordinateView extends View {
 	private PointF centerOfView;
 
 	private int blackDotRadius = 3;
-	private int redDotRadius = 4;
+	private int redDotRadius = 10;
 	private int lineWidth = 1;
 	private int xyLineWidth = 2;
 
@@ -82,6 +82,7 @@ public class PolarCoordinateView extends View {
 
 	@AfterViews
 	void afterViews() {
+		selectedXYCoordinates.add(new PointF(540,540));
 		init();
 	}
 
@@ -134,9 +135,15 @@ public class PolarCoordinateView extends View {
 		}
 
 		// 绘制所有已选点
-		if (xyCornerPoints1dSelected != null) {
-			canvas.drawPoints(xyCornerPoints1dSelected, redDotPain);
+//		if (xyCornerPoints1dSelected != null) {
+//			canvas.drawPoints(xyCornerPoints1dSelected, redDotPain);
+//		}
+		for (PointF point :selectedXYCoordinates) {
+			canvas.drawPoint(point.x, point.y, redDotPain);
+			Utils.debug("Point Draw: x="+point.x+" y="+point.y);
 		}
+
+		canvas.drawPoint(675, 306, redDotPain);
 
 		if (X == null || Y == null || rawX == null || rawY == null) {
 			return;
@@ -288,7 +295,8 @@ public class PolarCoordinateView extends View {
 	private double getMinPointDistance() {
 		double minCircle = getDistance(xyCenterPoints[0][0], xyCenterPoints[0][1]);
 		double minRay = viewWidth / 2 / circleNumber;
-		return minCircle < minRay ? minCircle : minRay;
+		return 50;
+//		return minCircle < minRay ? minCircle : minRay;
 	}
 
 	/**
@@ -315,29 +323,46 @@ public class PolarCoordinateView extends View {
 		// 判断选择了哪个点
 		int rayPos, circlePos;
 		for (int i = 0; i < 2; i++) {
-			if(circlePosFloor<0){
+			if (circlePosFloor < 0) {
 				continue;
 			}
 			for (int j = 0; j < 2; j++) {
-				rayPos = (rayPosFloor + j+rayNumber)/rayNumber;
+				rayPos = (rayPosFloor + j+rayNumber)%rayNumber;
 				circlePos = circlePosFloor + i;
+				if (circlePos > circleNumber - 1) {
+					continue;
+				}
+				Utils.debug("Point Distance >> "+(i*2+j)+": "+getDistance(xyCenterPoints[circlePos][rayPos], new PointF(x, y))+ " threshold: "+getMinPointDistance()/2+" Seleceted >> "+(getDistance(xyCenterPoints[circlePos][rayPos], new PointF(x, y)) < getMinPointDistance()/2));
 				if (getDistance(xyCenterPoints[circlePos][rayPos], new PointF(x, y)) < getMinPointDistance()/2) {
-					// 增加选择点
+					// 增加选择点 防止相同点重复添加
+					if(selectedPosList.size()>0 && selectedPosList.get(selectedPosList.size()-1).equals(new Point(circlePos, rayPos))){
+						return;
+					}
 					selectedPosList.add(new Point(circlePos, rayPos));
 
 					polarPoints[circlePos][rayPos].setIsSelected(true);
 					PointF selectedPoint = getXYCornerPointFromPolar(polarPoints[circlePos][rayPos]);
 					selectedXYCoordinates.add(selectedPoint);
 
-					float[] selectedPoints = new float[selectedXYCoordinates.size() * 2];
-					if(xyCornerPoints1dSelected!=null){
-						System.arraycopy(xyCornerPoints1dSelected, 0, selectedPoints, 0, xyCornerPoints1dSelected.length);
-					}
-					selectedPoints[selectedPoints.length - 2] = selectedPoint.x;
-					selectedPoints[selectedPoints.length - 1] = selectedPoint.y;
+					invalidate();
 
-					xyCornerPoints1dSelected = selectedPoints;
-					Utils.debug("Select Point Polar: " + polarPoints[circlePos][rayPos] + " CornerXY: " + selectedPoint.x + " " + selectedPoint.y);
+					Utils.debug("Select Points List: lenth -------->>" + selectedXYCoordinates.size());
+					Utils.debug("Select Points List: " + selectedXYCoordinates.toString());
+
+//					float[] selectedPoints = new float[selectedXYCoordinates.size() * 2];
+//					if(xyCornerPoints1dSelected!=null){
+//						System.arraycopy(xyCornerPoints1dSelected, 0, selectedPoints, 0, xyCornerPoints1dSelected.length);
+//					}
+//					selectedPoints[selectedPoints.length - 2] = selectedPoint.x;
+//					selectedPoints[selectedPoints.length - 1] = selectedPoint.y;
+//
+//					xyCornerPoints1dSelected = selectedPoints;
+//					Utils.debug("Select Point Polar: " + polarPoints[circlePos][rayPos] + " CornerXY: " + selectedPoint.x + " " + selectedPoint.y);
+//
+//					for(int m=0;m<selectedPoints.length;m = m+2){
+//						Utils.debug("Select Points length:"+selectedPoints.length+": x=" + selectedPoints[m]+" y="+selectedPoints[m+1]);
+//					}
+
 					return;
 				}
 			}
@@ -381,4 +406,6 @@ public class PolarCoordinateView extends View {
 	public void setCircleNumber(int circleNumber) {
 		this.circleNumber = circleNumber;
 	}
+
+	
 }
