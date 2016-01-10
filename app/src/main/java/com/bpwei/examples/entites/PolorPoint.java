@@ -33,4 +33,13 @@ public class PolorPoint {
 	public void setAngle(float angle) {
 		this.angle = angle;
 	}
+
+	@Override
+	public String toString() {
+		return "PolorPoint{" +
+				"radius=" + radius +
+				", angle=" + angle +
+				", isSelected=" + isSelected +
+				'}';
+	}
 }
