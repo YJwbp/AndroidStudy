@@ -84,7 +84,7 @@ public class PolarCoordinateActivity extends BaseActivity {
 		byte[] polarPoints = polarCoordinateView.getSelectedPointsBytes();
 		for (int i = 0; i < polarPoints.length; i += 2) {
 			UniversalItem item = new UniversalItem();
-			item.setTitle(i + ": ");
+			item.setTitle(i/2 + ": ");
 			item.setDesc("(" + polarPoints[i] + ", " + polarPoints[i + 1] + ")");
 			listDatas.add(item);
 		}
