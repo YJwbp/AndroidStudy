@@ -42,6 +42,7 @@
     <string name="params_setting">参数设置</string>
     <string name="send_coordinates">发送坐标</string>
     <string name="find_blue_tooth">搜索蓝牙设备</string>
+    <string name="use_universal_uuid">通用UUID: </string>
 
     <!--  BluetoothChat -->
     <string name="not_connected">You are not connected to a device</string>

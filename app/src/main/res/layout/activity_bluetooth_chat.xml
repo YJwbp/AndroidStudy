@@ -32,10 +32,36 @@
         android:background="@color/app_color">
 
         <TextView
-            android:id="@+id/btn_send_coordinates"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_universal_uuid"
+            android:layout_width="@dimen/btn_width"
             android:layout_height="@dimen/layout_title_h"
-            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/use_universal_uuid"
+            android:textColor="@color/bg_white_100"/>
+
+        <CheckBox
+            android:id="@+id/cb_check_uuid"
+            android:layout_width="@dimen/layout_title_h"
+            android:layout_height="@dimen/layout_title_h"
+            android:layout_toEndOf="@id/tv_universal_uuid"
+            android:layout_toRightOf="@id/tv_universal_uuid"
+            android:checked="true"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/split_line_h"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/cb_check_uuid"
+            android:layout_toRightOf="@id/cb_check_uuid"
+            android:background="@color/bg_black_20"/>
+
+        <TextView
+            android:id="@+id/btn_send_coordinates"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_title_h"
+            android:layout_toEndOf="@id/cb_check_uuid"
+            android:layout_toRightOf="@id/cb_check_uuid"
             android:gravity="center"
             android:text="@string/send_coordinates"
             android:textColor="@color/bg_white_100"

@@ -19,11 +19,11 @@ package com.bpwei.examples.activity;
  * limitations under the License.
  */
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -35,6 +35,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -62,6 +63,8 @@ public class BluetoothChatActivity extends BaseActivity {
 
 	@ViewById(R.id.tv_title)
 	TextView tvTitle;
+	@ViewById(R.id.cb_check_uuid)
+	CheckBox checkBox;
 
 	@Extra(ExtraInfo.POLAR_COORDINATES)
 	byte[] polarCoordinates;
@@ -117,6 +120,7 @@ public class BluetoothChatActivity extends BaseActivity {
 			finish();
 			return;
 		}
+		getActionBar().show();
 	}
 
 	@Override
@@ -153,6 +157,13 @@ public class BluetoothChatActivity extends BaseActivity {
 
 			}
 		}
+	}
+
+	@Click(R.id.cb_check_uuid)
+	void radioButtonClick() {
+		checkBox.setSelected(!checkBox.isSelected());
+		app.toast(getResources().getString(R.string.use_universal_uuid) + checkBox.isChecked());
+		mChatService.setIsConnectToSerialBoard(checkBox.isChecked());
 	}
 
 	@Click(R.id.btn_send_coordinates)
@@ -194,6 +205,7 @@ public class BluetoothChatActivity extends BaseActivity {
 
 		// Initialize the BluetoothChatService to perform bluetooth connections
 		mChatService = new BluetoothChatService(this, mHandler);
+		mChatService.setIsConnectToSerialBoard(checkBox.isChecked());
 
 		// Initialize the buffer for outgoing messages
 		mOutStringBuffer = new StringBuffer("");

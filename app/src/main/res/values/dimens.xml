@@ -63,6 +63,7 @@
 
     <!-- 标题相关-->
     <dimen name="layout_title_h">50dp</dimen>
+    <dimen name="split_line_h">40dp</dimen>
 
     <!-- 极坐标相关-->
     <dimen name="btn_width">100dp</dimen>
