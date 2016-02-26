@@ -30,7 +30,7 @@ public class SplashActivity extends BaseActivity {
 
 	@UiThread(delay = 10)
 	void enter() {
-		PolarCoordinateActivity_.intent(this).start();
+		MainActivity_.intent(this).start();
 		finish();
 		overridePendingTransition(0, 0);
 	}
