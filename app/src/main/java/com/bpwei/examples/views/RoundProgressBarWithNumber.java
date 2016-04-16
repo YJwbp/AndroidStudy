@@ -8,11 +8,12 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 
 import com.bpwei.examples.R;
+import com.bpwei.examples.utils.Utils;
 
 /**
  * Created by new on 15/8/10.
  */
-public class RoundProgressBarWithNumber extends HorizontalProgressBarWithNumber {
+public class RoundProgressBarWithNumber extends BaseProgressBar {
 
 	protected static final int DEFAULT_RADIUS = 30;
 	protected int mRadius = 0;
@@ -26,20 +27,19 @@ public class RoundProgressBarWithNumber extends HorizontalProgressBarWithNumber 
 	public RoundProgressBarWithNumber(Context context, AttributeSet attrs,
 			int defStyle) {
 		super(context, attrs, defStyle);
+		obtainStyledAttributes(attrs);
+	}
 
-		setHorizontalScrollBarEnabled(true);
+	@Override
+	protected void obtainStyledAttributes(AttributeSet attrs) {
+		super.obtainStyledAttributes(attrs);
 
-		TypedArray array = context.obtainStyledAttributes(attrs,
+		TypedArray array = getContext().obtainStyledAttributes(attrs,
 				R.styleable.RoundProgressBarWidthNumber);
 		mRadius = (int) array.getDimension(
 				R.styleable.RoundProgressBarWidthNumber_radius, DEFAULT_RADIUS);
 
 		array.recycle();
-		// 设置画笔
-		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setAntiAlias(true);
-		mPaint.setDither(true);
-		mPaint.setStrokeCap(Paint.Cap.ROUND);
 	}
 
 	@Override
@@ -64,9 +64,9 @@ public class RoundProgressBarWithNumber extends HorizontalProgressBarWithNumber 
 			widthMeasureSpec = MeasureSpec.makeMeasureSpec(totalWidth,
 					MeasureSpec.EXACTLY);
 		}
-		setMeasuredDimension(widthMeasureSpec,heightMeasureSpec);
+		setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
 
-//		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		// super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
 	}
 

@@ -85,6 +85,27 @@
         progress:progress_text_size="@dimen/font_4"
         round:radius="@dimen/radius"
         />
+    <com.bpwei.examples.views.DownloadStatusProgressBar
+        android:id="@+id/progress_bar_downloadStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_round"
+        android:progress="@integer/progress"
+        android:background="@color/color_red"
+        android:layout_marginLeft="@dimen/progress_bar_margin_left"
+        android:layout_marginRight="@dimen/progress_bar_margin_right"
+        android:layout_marginTop="@dimen/universal_interval"
+        android:layout_toRightOf="@+id/progress_bar_fan"
+        progress:progress_unreached_color="@color/color_item_12"
+        progress:progress_reached_color="@color/color_item_15"
+        progress:progress_text_color="@color/color_item_10"
+        progress:progress_reached_bar_height="@dimen/progress_reached_bar_height_round"
+        progress:progress_unreached_bar_height="@dimen/progress_unreached_bar_height_round"
+        progress:progress_text_size="@dimen/font_4"
+        round:radius="@dimen/radius"
+        progress:status="off"
+        progress:center_width="@dimen/progress_status_btn_w"
+        />
 
     <Button
         android:id="@+id/btn_start"

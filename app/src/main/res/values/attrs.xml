@@ -22,6 +22,11 @@
     <declare-styleable name="RoundProgressBarWidthNumber">
         <attr name="radius" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="DownloadStatusProgressBar">
+        <attr name="status" format="string"/>
+        <attr name="center_width" format="dimension"/>
+    </declare-styleable>
     <declare-styleable name="BezierView">
         <attr name="interval_narrowest" format="dimension" />
         <attr name="max_drag_length" format="dimension" />
