@@ -22,6 +22,7 @@
     <dimen name="progress_reached_bar_height_round">4dp</dimen>
     <dimen name="progress_unreached_bar_height_round">2dp</dimen>
     <dimen name="radius">50dp</dimen>
+    <dimen name="progress_status_btn_w">40dp</dimen>
     <!-- 字体 -->
     <dimen name="font_1">10dp
     </dimen>

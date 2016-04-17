@@ -1,131 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bpwei.examples"
-    android:versionCode="2015082811"
-    android:versionName="1.1.0">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<manifest package="com.bpwei.examples"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="2015082811"
+          android:versionName="1.1.0">
 
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
     <application
         android:name=".MainApp_"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
+        <receiver android:name="BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".activity.SplashActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.FaceDetectActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.VideoPlayAcitivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.ShapeSelectorActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.CustomProgressBarActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.CircularImageViewActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.MemoryLeakTestActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.TestActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.BezierActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.CardViewActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:name=".activity.RecyclerViewActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         </activity>
         <activity
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:name=".activity.GridPhotoWallActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         </activity>UniversalAdapterActivity
         <activity
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:name=".activity.LocationActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         </activity>
         <activity
-            android:theme="@style/AppTheme"
             android:name=".activity.UniversalAdapterActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".activity.TextStyleActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.FallPhotosActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".activity.PolarCoordinateActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activity.PolarSettingActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
         </activity>
-        <activity android:name=".activity.BluetoothChatActivity_"
-                  android:theme="@style/Widget.AppCompat.ActionBar"
-                  android:label="@string/app_name"
-                  android:configChanges="orientation|keyboardHidden">
+        <activity
+            android:name=".activity.BluetoothChatActivity_"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@style/Widget.AppCompat.ActionBar">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name=".activity.DeviceListActivity"
-                  android:label="@string/select_device"
-                  android:theme="@android:style/Theme.Holo.Dialog"
-                  android:configChanges="orientation|keyboardHidden" />
+        <activity
+            android:name=".activity.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/select_device"
+            android:theme="@android:style/Theme.Holo.Dialog"/>
     </application>
 
 </manifest>
