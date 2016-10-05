@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 	private final String PKG_NAME = "com.bpwei.examples.activity.";
 
 	// 以后添加新的Acitivity只需要在这里加入完整的类名即可
-	String [] activities = {"com.bpwei.examples.activity.VideoPlayAcitivity_", "com.bpwei.examples.activity.ShapeSelectorActivity_",
+	String [] activities = {"com.bpwei.examples.activity.ViewPagerActivity_","com.bpwei.examples.activity.VideoPlayAcitivity_", "com.bpwei.examples.activity.ShapeSelectorActivity_",
 	"com.bpwei.examples.activity.CustomProgressBarActivity_","com.bpwei.examples.activity.CircularImageViewActivity_",
 			"com.bpwei.examples.activity.MemoryLeakTestActivity_", "com.bpwei.examples.activity.TestActivity_"
 			, "com.bpwei.examples.activity.BezierActivity_", "com.bpwei.examples.activity.CardViewActivity_"

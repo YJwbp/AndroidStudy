@@ -7,14 +7,17 @@ import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-
 import com.bpwei.examples.R;
+import com.bpwei.examples.utils.Utils;
 import com.bpwei.examples.views.TestView_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by new on 15/8/14.
@@ -34,6 +37,18 @@ public class TestActivity extends BaseActivity {
 
 	@AfterViews
 	void afterViews(){
+		List<String> test = new ArrayList();
+		for (int i = 0; i < 5; i++) {
+			test.add(String.valueOf(i));
+		}
+		for(String str:test){
+			if(Integer.valueOf(str)==3){
+				test.remove(str);
+			}
+		}
+		for(String str:test){
+			Utils.debug("Str: " + str);
+		}
 		final Context context = this;
 //		llButtons.setOnTouchListener(new View.OnTouchListener() {
 //			@Override
