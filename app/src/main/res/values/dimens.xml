@@ -61,6 +61,7 @@
     <dimen name="dimen_6">6dp</dimen>
     <dimen name="dimen_7">7dp</dimen>
     <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
 
     <!-- 标题相关-->
     <dimen name="layout_title_h">50dp</dimen>

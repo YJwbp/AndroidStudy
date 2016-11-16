@@ -9,6 +9,7 @@ import com.bpwei.examples.adapter.CustomPagerAdapter;
 import com.bpwei.examples.adapter.RecyclerViewAdapter;
 import com.bpwei.examples.bean.Character;
 import com.bpwei.examples.views.CustomViewPager;
+import com.bpwei.examples.views.TextIndicator;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -24,6 +25,8 @@ import java.util.List;
 public class ViewPagerActivity extends BaseActivity {
     @ViewById(R.id.pager)
     CustomViewPager pager;
+    @ViewById(R.id.indicator)
+    TextIndicator textIndicator;
 
     RecyclerView recyclerView;
     RecyclerView recyclerView2;
@@ -59,5 +62,6 @@ public class ViewPagerActivity extends BaseActivity {
         pagerAdapter.add(recyclerView2);
         pager.setAdapter(pagerAdapter);
 
+        textIndicator.setViewPager(pager);
     }
 }

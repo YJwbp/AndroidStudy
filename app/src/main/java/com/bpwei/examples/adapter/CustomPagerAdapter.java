@@ -16,15 +16,21 @@ public class CustomPagerAdapter extends PagerAdapter {
         this.views = new ArrayList<>();
     }
 
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return position == 0 ? "第一" : "第二";
+    }
+
     public void addAll(ArrayList<View> datas) {
         this.views.addAll(datas);
         this.notifyDataSetChanged();
     }
 
-    public void add(View view){
+    public void add(View view) {
         this.views.add(view);
         this.notifyDataSetChanged();
     }
+
     public void removeAll() {
         this.views.clear();
     }
