@@ -33,5 +33,14 @@
         <attr name="bezier_color" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="TextIndicator">
+        <attr name="text_color_unselected" format="color"/>
+        <attr name="text_color_selected" format="color"/>
+        <attr name="underline_color" format="color"/>
+        <attr name="show_divider" format="boolean"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="underline_height" format="dimension"/>
+        <attr name="underline_width" format="dimension"/>
+    </declare-styleable>
 </resources>
 

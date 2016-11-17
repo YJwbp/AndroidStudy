@@ -61,6 +61,7 @@ public class ViewPagerActivity extends BaseActivity {
         pagerAdapter.add(recyclerView);
         pagerAdapter.add(recyclerView2);
         pager.setAdapter(pagerAdapter);
+        pager.addOnPageChangeListener(textIndicator);
 
         textIndicator.setViewPager(pager);
     }

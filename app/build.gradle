@@ -20,7 +20,7 @@ apt {
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '24.0.3'
 
     defaultConfig {
         applicationId "com.bpwei.examples"
