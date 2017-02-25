@@ -4,4 +4,43 @@
         <attr name="shapeColor" format="color" />
         <attr name="displayShapeName" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="HorizontalProgressBarWithNumber">
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBarWidthNumber">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DownloadStatusProgressBar">
+        <attr name="status" format="integer"/>
+        <attr name="center_width" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="BezierView">
+        <attr name="interval_narrowest" format="dimension" />
+        <attr name="max_drag_length" format="dimension" />
+        <attr name="bezier_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TextIndicator">
+        <attr name="text_color_unselected" format="color"/>
+        <attr name="text_color_selected" format="color"/>
+        <attr name="underline_color" format="color"/>
+        <attr name="show_divider" format="boolean"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="underline_height" format="dimension"/>
+        <attr name="underline_width" format="dimension"/>
+    </declare-styleable>
 </resources>
+

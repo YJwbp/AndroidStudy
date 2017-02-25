@@ -6,6 +6,69 @@
     <dimen name="item_padding_left">5dp</dimen>
     <dimen name="item_padding_right">5dp</dimen>
     <dimen name="item_height">51dp</dimen>
-    <dimen name="item_font_size">25sp</dimen>
-    <dimen name="title_font_size">40sp</dimen>
+    <dimen name="item_font_size">25dp
+    </dimen>
+    <dimen name="title_font_size">40dp
+    </dimen>
+    <dimen name="progress_bar_margin_top">50dp</dimen>
+    <dimen name="progress_bar_margin_left">10dp</dimen>
+    <dimen name="progress_bar_margin_right">10dp</dimen>
+    <dimen name="progress_reached_bar_height">8dp</dimen>
+    <dimen name="progress_unreached_bar_height">5dp</dimen>
+    <dimen name="progress_text_size">15dp
+    </dimen>
+    <dimen name="universal_interval">10dp</dimen>
+
+    <dimen name="progress_reached_bar_height_round">4dp</dimen>
+    <dimen name="progress_unreached_bar_height_round">2dp</dimen>
+    <dimen name="radius">50dp</dimen>
+    <dimen name="progress_status_btn_w">40dp</dimen>
+    <!-- 字体 -->
+    <dimen name="font_1">10dp
+    </dimen>
+    <dimen name="font_2">15dp
+    </dimen>
+    <dimen name="font_3">20dp
+    </dimen>
+    <dimen name="font_4">25dp
+    </dimen>
+    <dimen name="font_5">30dp
+    </dimen>
+    <dimen name="font_6">35dp
+    </dimen>
+
+    <!-- 贝塞尔控件相关 -->
+    <dimen name="bezier_width">200dp</dimen>
+    <dimen name="bezier_height">100dp</dimen>
+    <dimen name="max_drag_length">300dp</dimen>
+    <dimen name="interval_narrowest">50dp</dimen>
+
+    <dimen name="margin_1">5dp</dimen>
+    <dimen name="margin_2">10dp</dimen>
+    <dimen name="margin_3">15dp</dimen>
+    <dimen name="margin_4">20dp</dimen>
+    <dimen name="margin_5">25dp</dimen>
+    <dimen name="margin_6">30dp</dimen>
+
+    <!-- RecyclerView 相关 -->
+    <dimen name="list_item_height">200dp</dimen>
+
+    <dimen name="dimen_1">1dp</dimen>
+    <dimen name="dimen_2">2dp</dimen>
+    <dimen name="dimen_3">3dp</dimen>
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_5">5dp</dimen>
+    <dimen name="dimen_6">6dp</dimen>
+    <dimen name="dimen_7">7dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_50">50dp</dimen>
+
+    <!-- 标题相关-->
+    <dimen name="layout_title_h">50dp</dimen>
+    <dimen name="split_line_h">40dp</dimen>
+
+    <!-- 极坐标相关-->
+    <dimen name="btn_width">100dp</dimen>
+    <dimen name="btn_margin">20dp</dimen>
+    <dimen name="list_margin">10dp</dimen>
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bpwei.examples.views.TextIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50" />
+
+    <com.bpwei.examples.views.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/indicator"
+        app:text_color_selected="@color/color_red"
+        app:text_color_unselected="@color/color_item_12"
+        app:text_size="@dimen/font_2"
+        app:underline_color="@color/color_item_2"
+        app:underline_height="@dimen/dimen_2">
+
+    </com.bpwei.examples.views.CustomViewPager>
+</RelativeLayout>

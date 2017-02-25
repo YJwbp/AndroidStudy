@@ -1,13 +1,22 @@
-.gradle
-/BpweiStudy.iml
-/build.gradle
-/gradle.properties
-/gradlew
-/gradlew.bat
-/settings.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
+# Android Studio
+.gradle/
+local.properties
+build/
+captures/
+*.iml
+
+# built application files
+*.apk
+*.ap_
+
+# generated files
+bin/
+gen/
+
+# Intellij project files
+*.ipr
+*.iws
+.idea/
+
+# Mac .DS_Store
+*.DS_Store

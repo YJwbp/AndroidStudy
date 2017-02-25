@@ -1,7 +1,74 @@
-<resources>
-    <string name="app_name">Practice</string>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Polar</string>
+
+    <!-- 通用文案 -->
+    <string name="back">返回</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="next">下一步</string>
+    <string name="pre">上一步</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title">Demo List</string>
+    <!--进度条相关-->
+    <string name="txt_start">开始</string>
+    <string name="txt_pause">暂停</string>
+    <string name="normal">普通</string>
+    <string name="horizontal">水平带数字</string>
+    <string name="round">环形带数字</string>
+
+    <string name="load">加载</string>
+    <string name="gaara">Gaara</string>
+    <string name="max_memo">最大可用内存：%s KB</string>
+
+    <string name="latitude">经度：</string>
+    <string name="longtitude">纬度：</string>
+    <string name="update">刷新</string>
+    <string name="others">其他信息</string>
+    <string name="status">状态：</string>
+
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+    <!-- 极坐标界面 -->
+    <string name="clear">清除</string>
+    <string name="check">查看</string>
+    <string name="send">发送</string>
+    <string name="circle_number">圆数</string>
+    <string name="ray_number">射线数</string>
+    <string name="params_setting">参数设置</string>
+    <string name="send_coordinates">发送坐标</string>
+    <string name="find_blue_tooth">搜索蓝牙设备</string>
+    <string name="use_universal_uuid">通用UUID: </string>
+
+    <!--  BluetoothChat -->
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to: <xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="title_not_connected">not connected</string>
+
+    <!--  DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+
+    <!-- Options Menu -->
+    <string name="secure_connect">Connect a device - Secure</string>
+    <string name="insecure_connect">Connect a device - Insecure</string>
+    <string name="discoverable">Make discoverable</string>
+    <string name="disConnect">Disconnect</string>
+
+    <!-- 矢量字体 -->
+    <string name="font_back">B</string>
+    <string name="font_next">A</string>
+    <string name="font_love">C</string>
+    <string name="font_option">D</string>
 </resources>

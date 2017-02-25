@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_lat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:gravity="center"
+        android:text="@string/latitude"
+        android:textSize="@dimen/font_4"
+        />
+
+    <TextView
+        android:id="@+id/tv_lont"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/tv_lat"
+        android:gravity="center"
+        android:text="@string/longtitude"
+        android:textSize="@dimen/font_4"
+        />
+
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_alignParentBottom="true"
+        android:text="@string/update"
+        />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_above="@id/btn_update"
+        android:gravity="center_vertical"
+        android:text="@string/status"
+        android:textSize="@dimen/font_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_others"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_status"
+        android:layout_below="@id/tv_lont"
+        android:text="@string/others"
+        android:textSize="@dimen/font_2"
+        />
+
+
+</RelativeLayout>

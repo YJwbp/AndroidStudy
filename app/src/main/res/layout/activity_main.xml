@@ -15,12 +15,19 @@
         android:gravity="center"
         android:text="@string/title"
         android:textSize="@dimen/title_font_size"/>
+    <TextView
+        android:id="@+id/tv_maxMemo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/tv_title"
+        android:gravity="center"
+        android:textSize="@dimen/font_2"/>
 
     <ListView
         android:id="@+id/list_apps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title"
+        android:layout_below="@id/tv_maxMemo"
         android:paddingLeft="@dimen/item_padding_left"
         android:paddingRight="@dimen/item_padding_right">
 
