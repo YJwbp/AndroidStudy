@@ -79,6 +79,10 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".activity.ButterKnifeActivity_"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name=".activity.BezierActivity_"
             android:label="@string/app_name">
         </activity>
